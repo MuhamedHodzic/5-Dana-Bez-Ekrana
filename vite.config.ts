@@ -3,8 +3,9 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { createServer } from "./server";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/5-Dana-Bez-Ekrana/',
+
   server: {
     host: "::",
     port: 8081,
@@ -13,9 +14,11 @@ export default defineConfig(({ mode }) => ({
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
     },
   },
+
   build: {
-    outDir: "dist/spa",
+    outDir: "dist",
   },
+
   plugins: [react(), expressPlugin()],
   resolve: {
     alias: {
@@ -24,6 +27,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+    
+  
 
 function expressPlugin(): Plugin {
   return {

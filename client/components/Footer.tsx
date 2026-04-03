@@ -36,28 +36,34 @@ export default function Footer() {
           <div>
             <h4 className="text-base font-semibold text-white">Kontakt</h4>
             <div className="mt-4 space-y-3 text-sm text-white/75">
-              <p className="flex items-center gap-2">
-                <Phone size={16} />
+              <p className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-5 h-5">
+                  <Phone size={16} />
+                </div>
                 <span>+387 62 409 253</span>
               </p>
-              <a href="mailto:narodnabibliotekamostar@gmail.com" className="flex items-center gap-2 transition-colors hover:text-white">
-                <Mail size={16} />
+              <a href="mailto:narodnabibliotekamostar@gmail.com" className="flex items-center gap-3 transition-colors hover:text-white">
+                <div className="flex items-center justify-center w-5 h-5">
+                  <Mail size={16} />
+                </div>
                 <span>narodnabibliotekamostar@gmail.com</span>
               </a>
-              <p className="flex items-start gap-2">
-                <MapPin size={16} className="mt-0.5" />
+              <p className="flex items-start gap-3">
+                <div className="flex items-center justify-center w-5 h-5 mt-0.5">
+                  <MapPin size={16} />
+                </div>
                 <span>Mostar, Bosna i Hercegovina</span>
               </p>
             </div>
 
             <div className="mt-5 flex items-center gap-3">
-              <a href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw" target="_blank" rel="noopener noreferrer" className="rounded-full bg-white/10 p-3 transition-all hover:bg-white hover:text-slate-950" aria-label="Instagram">
+              <a href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 transition-all hover:bg-white hover:text-slate-950" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-white/10 p-3 transition-all hover:bg-white hover:text-slate-950" aria-label="Facebook">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 transition-all hover:bg-white hover:text-slate-950" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-white/10 p-3 transition-all hover:bg-white hover:text-slate-950" aria-label="YouTube">
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 transition-all hover:bg-white hover:text-slate-950" aria-label="YouTube">
                 <Youtube size={18} />
               </a>
             </div>

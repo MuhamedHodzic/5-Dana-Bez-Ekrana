@@ -45,16 +45,16 @@ export default function Rezultati() {
       <NavBar />
 
       <motion.section
-        className="bg-slate-950 text-white"
+        className="bg-gradient-to-r from-sky-blue to-primary text-white py-16 md:py-20"
         initial="hidden"
         animate="visible"
         variants={sectionVariants}
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          <p className="text-sm uppercase tracking-[0.25em] text-white/60">Novosti</p>
+          <p className="text-sm uppercase tracking-[0.25em] text-white/70">Novosti</p>
           <h1 className="mt-4 text-4xl md:text-5xl font-bold">Obavještenja i aktuelnosti</h1>
-          <p className="mt-4 max-w-3xl text-base md:text-lg leading-8 text-white/80">
+          <p className="mt-4 max-w-3xl text-base md:text-lg leading-8 text-white/90">
             Pratite najnovije informacije, najave i kratke izvještaje sa školskih i projektnih
             aktivnosti.
           </p>
@@ -71,8 +71,8 @@ export default function Rezultati() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
-            <Newspaper className="text-primary" size={28} />
-            <h2 className="section-title mb-0">Novosti</h2>
+            <Newspaper className="text-sky-blue" size={28} />
+            <h2 className="section-title mb-0 text-sky-blue">Novosti</h2>
           </div>
           <p className="section-subtitle mt-2 max-w-2xl">
             Tri najvažnije objave sa pregledom sadržaja i datumom objave.
@@ -87,13 +87,9 @@ export default function Rezultati() {
               >
                 <img src={item.image} alt={item.title} className="h-52 w-full object-cover" />
                 <div className="p-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{item.date}</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-blue">{item.date}</p>
                   <h2 className="mt-3 text-xl font-semibold text-slate-950">{item.title}</h2>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 font-semibold text-primary">
-                    Pročitaj više
-                    <ArrowRight size={16} />
-                  </span>
                 </div>
               </motion.article>
             ))}

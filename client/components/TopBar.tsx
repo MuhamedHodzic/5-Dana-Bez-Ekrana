@@ -2,7 +2,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function TopBar() {
   return (
-    <div className="bg-slate-950 text-white text-xs md:text-sm border-b border-white/10 hidden sm:block">
+    <div className="bg-slate-950 text-white text-xs md:text-sm border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/80">

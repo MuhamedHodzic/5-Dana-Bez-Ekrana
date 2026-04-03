@@ -2,7 +2,7 @@ import "./global.css";
 
 import { Toaster } from "@/components/ui/toaster";
 import { createRoot } from "react-dom/client";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -30,31 +30,42 @@ const LoadingFallback = () => (
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/o-projektu" element={<OProjeKtu />} />
-            <Route path="/program" element={<Program />} />
-            <Route path="/aktivnosti" element={<Program />} />
-            <Route path="/rezultati" element={<Rezultati />} />
-            <Route path="/novosti" element={<Rezultati />} />
-            <Route path="/partneri" element={<Partneri />} />
-            <Route path="/galerija" element={<Galerija />} />
-            <Route path="/kontakt" element={<Kontakt />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+const App = () => {
+  // Handle redirect from 404.html if needed
+  useEffect(() => {
+    const redirectTo = sessionStorage.getItem('redirectTo');
+    if (redirectTo && window.location.pathname === '/5-Dana-Bez-Ekrana/') {
+      sessionStorage.removeItem('redirectTo');
+      window.history.replaceState(null, '', '/5-Dana-Bez-Ekrana' + redirectTo);
+    }
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename="/5-Dana-Bez-Ekrana">
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/o-projektu" element={<OProjeKtu />} />
+              <Route path="/program" element={<Program />} />
+              <Route path="/aktivnosti" element={<Program />} />
+              <Route path="/rezultati" element={<Rezultati />} />
+              <Route path="/novosti" element={<Rezultati />} />
+              <Route path="/partneri" element={<Partneri />} />
+              <Route path="/galerija" element={<Galerija />} />
+              <Route path="/kontakt" element={<Kontakt />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 let root: ReturnType<typeof createRoot> | null = null;
 

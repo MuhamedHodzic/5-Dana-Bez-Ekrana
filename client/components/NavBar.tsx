@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronRight } from "lucide-react";
 import Logo from "./Logo";
-import TopBar from "./TopBar";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -28,24 +28,29 @@ export default function NavBar() {
 
   return (
     <header className="sticky top-0 z-50 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
-      <TopBar />
-
       <div className="bg-white/95 backdrop-blur-md border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between gap-4">
             <Logo />
 
             <nav className="flex items-center gap-1 overflow-x-auto">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className="whitespace-nowrap rounded-full px-3 py-2 text-xs sm:text-sm font-semibold text-slate-700 transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:shadow-sm"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => handleNavClick(link.href)}
+                    className={`whitespace-nowrap rounded-full px-3 py-2 text-xs sm:text-sm font-semibold transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:shadow-sm ${
+                      isActive
+                        ? "bg-primary text-white shadow-sm"
+                        : "text-slate-700"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
 
             <div className="hidden sm:flex items-center gap-3">

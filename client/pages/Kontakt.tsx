@@ -114,49 +114,75 @@ export default function Kontakt() {
             </motion.div>
 
             {/* Social Media */}
-            <motion.div 
-              className="group bg-white p-6 md:p-8 rounded-xl border border-gray-200 text-center cursor-pointer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-            >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div 
-                className="w-14 h-14 bg-sky-blue text-white rounded-lg flex items-center justify-center mx-auto mb-4"
-                whileHover={{ scale: 1.3, rotate: 10 }}
-                transition={{ duration: 0.3 }}
+                className="group bg-white p-6 md:p-8 rounded-xl border border-gray-200 text-center cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.5 }}
               >
-                <Heart size={28} />
-              </motion.div>
-              <h3 className="text-lg md:text-xl font-bold text-foreground mb-4">
-                Društvene mreže
-              </h3>
-              <div className="flex gap-3 md:gap-4 justify-center">
+                <motion.div 
+                  className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 text-white rounded-lg flex items-center justify-center mx-auto mb-4"
+                  whileHover={{ scale: 1.3, rotate: 10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Instagram size={24} />
+                </motion.div>
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
+                  Instagram
+                </h3>
+                <p className="text-muted-foreground mb-5">
+                  Prati nas i podrži projekat na Instagramu.
+                </p>
                 <motion.a
                   href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-br from-pink-500 to-purple-500 text-white p-3 rounded-lg transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full rounded-lg bg-gradient-to-br from-pink-500 to-purple-500 px-4 py-3 text-white font-semibold transition-all duration-300"
                   title="Instagram"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <Instagram size={24} />
+                  Otvori Instagram
                 </motion.a>
+              </motion.div>
+
+              <motion.div 
+                className="group bg-white p-6 md:p-8 rounded-xl border border-gray-200 text-center cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15, duration: 0.5 }}
+              >
+                <motion.div 
+                  className="w-14 h-14 bg-black text-white rounded-lg flex items-center justify-center mx-auto mb-4"
+                  whileHover={{ scale: 1.3, rotate: 10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <TikTokIcon className="w-6 h-6" />
+                </motion.div>
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
+                  TikTok
+                </h3>
+                <p className="text-muted-foreground mb-5">
+                  Prati nas i gledaj video sadržaje na TikTok-u.
+                </p>
                 <motion.a
                   href="https://www.tiktok.com/@5dana_bez_ekrana"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-black text-white p-3 rounded-lg transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full rounded-lg bg-black px-4 py-3 text-white font-semibold transition-all duration-300"
                   title="TikTok"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <TikTokIcon className="w-6 h-6" />
+                  Otvori TikTok
                 </motion.a>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
             {/* Location */}
             <motion.div 

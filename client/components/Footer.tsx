@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="mt-4 space-y-3 text-sm text-white/75">
               <p className="flex items-center gap-2">
                 <Phone size={16} />
-                <span>+387 36 000 000</span>
+                <span>+387 62 409 253</span>
               </p>
               <a href="mailto:narodnabibliotekamostar@gmail.com" className="flex items-center gap-2 transition-colors hover:text-white">
                 <Mail size={16} />

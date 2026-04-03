@@ -21,13 +21,11 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 const galleryImages = [
   "/5-Dana-Bez-Ekrana/images/9b6dc1b4-f6d8-4033-a288-5b4e44a2d291.JPG",
   "/5-Dana-Bez-Ekrana/images/4ded0865-ae8b-46a0-a995-e1c47aeeb03e.JPG",
-  "/5-Dana-Bez-Ekrana/images/5cebf4cc-15d3-4223-a1c5-55c1b3542600.JPG",
   "/5-Dana-Bez-Ekrana/images/9b8cd32c-ae0d-4150-8d2c-4f2d7b640cf1.JPG",
   "/5-Dana-Bez-Ekrana/images/a2fae47a-efdc-4100-800c-53c6ebaed90b.JPG",
   "/5-Dana-Bez-Ekrana/images/6d88c565-9e77-4164-8b54-912933d96788.JPG",
   "/5-Dana-Bez-Ekrana/images/3892c298-0e56-43f0-a24d-035d13f7b1fb.JPG",
   "/5-Dana-Bez-Ekrana/images/3a213116-f3a8-4d8d-aa81-a01dd926edb6.JPG",
-  "/5-Dana-Bez-Ekrana/images/45becd75-d2c8-46c2-a582-5e6b3c4c1f66.JPG",
 ];
 
 const slideVariants = {
@@ -62,8 +60,8 @@ export default function Index() {
     <div className="min-h-screen bg-white">
       <NavBar />
 
-      {/* Main Slideshow - Responsive Height */}
-      <div className="relative w-full h-[400px] sm:h-[450px] md:h-[550px] lg:h-[600px] overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      {/* Main Slideshow - Full Screen Height on Mobile */}
+      <div className="relative w-screen h-[80vh] sm:h-[450px] md:h-[550px] lg:h-[600px] overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
         {/* Animated gradient background */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20 animate-pulse" />
@@ -80,7 +78,7 @@ export default function Index() {
             <img
               src={galleryImages[current]}
               alt="Slika iz projekta"
-              className="w-full h-full object-contain bg-black/50"
+              className="w-full h-full object-contain object-center bg-slate-800"
               loading="lazy"
             />
             {/* Dark overlay */}
@@ -221,6 +219,15 @@ export default function Index() {
                 <p className="text-muted-foreground">{item.desc}</p>
               </motion.div>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              to="/o-projektu"
+              className="btn-primary inline-block"
+            >
+              Saznaj Više o Projektu
+            </Link>
           </div>
         </div>
       </motion.section>

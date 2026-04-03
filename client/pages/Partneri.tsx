@@ -34,7 +34,7 @@ export default function Partneri() {
       role: "Partner za društveni mir",
       icon: <Handshake size={40} />,
       desc: "Omogućava nam da organizujemo kampove i pruža duhovnu podršku zajedničkim vrijednostima.",
-      color: "warm-beige",
+      color: "primary",
     },
   ];
 
@@ -268,7 +268,7 @@ export default function Partneri() {
               </div>
             </div>
 
-            <div className="flex gap-6 p-6 bg-gradient-to-r from-warm-beige/20 to-warm-beige/10 rounded-lg border border-warm-beige/30">
+            <div className="flex gap-6 p-6 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg border border-primary/20">
               <div className="text-3xl flex-shrink-0">🌱</div>
               <div>
                 <h3 className="text-lg font-bold text-foreground mb-2">

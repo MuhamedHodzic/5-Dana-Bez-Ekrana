@@ -9,7 +9,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="mt-20 bg-slate-950 text-white hidden md:block">
+    <footer className="mt-20 bg-slate-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16">
         <div className="grid gap-10 md:grid-cols-3">
           <div>

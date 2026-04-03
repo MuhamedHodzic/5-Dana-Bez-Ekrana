@@ -146,9 +146,23 @@ export default function Index() {
         {/* Autoplay toggle */}
         <motion.button
           onClick={() => setIsAutoPlay(!isAutoPlay)}
-          className="absolute top-4 right-4 z-20 px-3 py-1 md:px-4 md:py-2 rounded-full bg-white/20 text-white text-xs md:text-sm hover:bg-white/40 transition-colors backdrop-blur-sm font-semibold"
+          className="absolute bottom-4 right-4 z-20 px-3 py-2 md:px-4 md:py-3 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors backdrop-blur-sm font-semibold flex items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          aria-label={isAutoPlay ? "Zaustavi autoplay" : "Pokreni autoplay"}
         >
-          {isAutoPlay ? "║║" : "▶"}
+          {isAutoPlay ? (
+            <>
+              <span className="text-sm">⏸️</span>
+              <span className="hidden sm:inline text-xs">PAUSE</span>
+            </>
+          ) : (
+            <>
+              <span className="text-sm">▶️</span>
+              <span className="hidden sm:inline text-xs">PLAY</span>
+            </>
+          )}
         </motion.button>
       </div>
 
@@ -259,103 +273,6 @@ export default function Index() {
             >
               Pogledaj Detaljniji Program
             </Link>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Kontakt Sekcija sa Google Maps */}
-      <motion.section
-        className="py-12 md:py-20 bg-white"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            Kontaktiraj Nas
-          </motion.h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="flex gap-4">
-                <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-foreground">Email</h3>
-                  <a href="mailto:narodnabibliotekamostar@gmail.com" className="text-primary hover:underline">
-                    narodnabibliotekamostar@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-foreground">Lokacija</h3>
-                  <p className="text-muted-foreground">
-                    Narodna Biblioteka Mostar<br />
-                    Mostar, Bosna i Hercegovina
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-4">
-                <h3 className="font-bold text-foreground mb-3">Prati nas</h3>
-                <div className="flex gap-3">
-                  <a
-                    href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all"
-                    title="Instagram"
-                  >
-                    <Instagram className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@5dana_bez_ekrana"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all"
-                    title="TikTok"
-                  >
-                    <TikTokIcon className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-
-              <Link to="/kontakt" className="btn-primary inline-block mt-4">
-                Pošalji Poruku
-              </Link>
-            </motion.div>
-
-            {/* Google Maps */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="rounded-lg overflow-hidden shadow-lg"
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2894.843550780359!2d17.8137735!3d43.3444754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134b431becf0147f%3A0xa5b16ffc2a2197f6!2sNarodna%20biblioteka%20Mostar!5e0!3m2!1sen!2sba!4v1709134800000"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Národna biblioteka Mostar"
-              />
-            </motion.div>
           </div>
         </div>
       </motion.section>

@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 
 export default function Logo() {
+  const handleLogoClick = () => {
+    // Always scroll to top when logo is clicked
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <Link to="/" className="group flex items-center gap-3 transition-transform hover:scale-[1.02]">
+    <Link to="/" onClick={handleLogoClick} className="group flex items-center gap-3 transition-transform hover:scale-[1.02]">
       <div className="relative flex h-12 w-12 items-center justify-center md:h-14 md:w-14">
         <img 
           src="/5-Dana-Bez-Ekrana/images/5 dana.png" 

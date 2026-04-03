@@ -7,6 +7,15 @@ import TopBar from "./TopBar";
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleNavClick = (href: string) => {
+    // Scroll to top when clicking any nav link
+    scrollToTop();
+  };
+
   const navLinks = [
     { href: "/", label: "Početna" },
     { href: "/o-projektu", label: "O projektu" },
@@ -31,6 +40,7 @@ export default function NavBar() {
                 <Link
                   key={link.href}
                   to={link.href}
+                  onClick={() => handleNavClick(link.href)}
                   className="whitespace-nowrap rounded-full px-3 py-2 text-xs sm:text-sm font-semibold text-slate-700 transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:shadow-sm"
                 >
                   {link.label}

@@ -50,16 +50,16 @@ export default function Program() {
       <NavBar />
 
       <motion.section
-        className="bg-slate-950 text-white"
+        className="bg-gradient-to-r from-sky-blue to-primary text-white"
         initial="hidden"
         animate="visible"
         variants={sectionVariants}
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          <p className="text-sm uppercase tracking-[0.25em] text-white/60">Aktivnosti</p>
+          <p className="text-sm uppercase tracking-[0.25em] text-white/70">Aktivnosti</p>
           <h1 className="mt-4 text-4xl md:text-5xl font-bold">Školske i projektne aktivnosti</h1>
-          <p className="mt-4 max-w-3xl text-base md:text-lg leading-8 text-white/80">
+          <p className="mt-4 max-w-3xl text-base md:text-lg leading-8 text-white/90">
             Aktivnosti su osmišljene tako da učenicima ponude kvalitetan sadržaj, podstaknu
             saradnju i povežu formalno obrazovanje sa praktičnim iskustvom.
           </p>
@@ -82,7 +82,7 @@ export default function Program() {
                 whileHover={{ y: -6 }}
                 className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-blue text-white">
                   {item.icon}
                 </div>
                 <h2 className="mt-4 text-lg font-semibold text-slate-950">{item.title}</h2>

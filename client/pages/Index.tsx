@@ -25,9 +25,9 @@ const galleryImages = [
   "/5-Dana-Bez-Ekrana/images/9b8cd32c-ae0d-4150-8d2c-4f2d7b640cf1.JPG",
   "/5-Dana-Bez-Ekrana/images/a2fae47a-efdc-4100-800c-53c6ebaed90b.JPG",
   "/5-Dana-Bez-Ekrana/images/6d88c565-9e77-4164-8b54-912933d96788.JPG",
-  "/images/3892c298-0e56-43f0-a24d-035d13f7b1fb.JPG",
-  "/images/3a213116-f3a8-4d8d-aa81-a01dd926edb6.JPG",
-  "/images/45becd75-d2c8-46c2-a582-5e6b3c4c1f66.JPG",
+  "/5-Dana-Bez-Ekrana/images/3892c298-0e56-43f0-a24d-035d13f7b1fb.JPG",
+  "/5-Dana-Bez-Ekrana/images/3a213116-f3a8-4d8d-aa81-a01dd926edb6.JPG",
+  "/5-Dana-Bez-Ekrana/images/45becd75-d2c8-46c2-a582-5e6b3c4c1f66.JPG",
 ];
 
 const slideVariants = {

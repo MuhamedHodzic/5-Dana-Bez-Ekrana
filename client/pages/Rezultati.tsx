@@ -15,19 +15,19 @@ const news = [
     title: "Otvoren novi ciklus prijava",
     date: "12. septembar 2025.",
     text: "Objavljeni su uslovi i rokovi za prijavu učenika na projekat.",
-    image: "/images/5cebf4cc-15d3-4223-a1c5-55c1b3542600.JPG",
+    image: "/5-Dana-Bez-Ekrana/images/5cebf4cc-15d3-4223-a1c5-55c1b3542600.JPG",
   },
   {
     title: "Održana radionica za učenike",
     date: "18. septembar 2025.",
     text: "Učenici su učestvovali u radionici o timskom radu i savremenom učenju.",
-    image: "/images/9b8cd32c-ae0d-4150-8d2c-4f2d7b640cf1.JPG",
+    image: "/5-Dana-Bez-Ekrana/images/9b8cd32c-ae0d-4150-8d2c-4f2d7b640cf1.JPG",
   },
   {
     title: "Saradnja sa partnerima",
     date: "24. septembar 2025.",
     text: "Projektne aktivnosti dodatno su podržane saradnjom sa institucijama.",
-    image: "/images/4ded0865-ae8b-46a0-a995-e1c47aeeb03e.JPG",
+    image: "/5-Dana-Bez-Ekrana/images/4ded0865-ae8b-46a0-a995-e1c47aeeb03e.JPG",
   },
 ];
 

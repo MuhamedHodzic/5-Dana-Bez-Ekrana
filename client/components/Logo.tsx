@@ -5,7 +5,7 @@ export default function Logo() {
     <Link to="/" className="group flex items-center gap-3 transition-transform hover:scale-[1.02]">
       <div className="relative flex h-12 w-12 items-center justify-center md:h-14 md:w-14">
         <img 
-          src="/images/5 dana.png" 
+          src="/5-Dana-Bez-Ekrana/images/5 dana.png" 
           alt="5 Dana Bez Ekrana Logo" 
           className="h-full w-full object-contain drop-shadow-lg hover:drop-shadow-xl transition-all"
         />

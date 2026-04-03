@@ -3,13 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>5 Dana Bez Ekrana</title>
-    <link rel="icon" type="image/png" href="/5-Dana-Bez-Ekrana/favicon.png?v=3">
-    <script type="module" crossorigin src="/5-Dana-Bez-Ekrana/assets/index-CyeNVTI-.js"></script>
-    <link rel="stylesheet" crossorigin href="/5-Dana-Bez-Ekrana/assets/index-BDi767N_.css">
+    <script>
+      // SPA routing fix for GitHub Pages
+      // This script handles client-side routing by redirecting 404s
+      // to the root and storing the path so App.tsx can restore it
+      var pathSegments = window.location.pathname.split('/').filter(Boolean);
+      
+      // If we're in the subdirectory but path doesn't match
+      if (pathSegments.length > 0 && pathSegments[0] !== '5-Dana-Bez-Ekrana') {
+        // Reconstruct path without the subdirectory
+        var redirectPath = '/' + pathSegments.join('/');
+        sessionStorage.setItem('redirectTo', redirectPath);
+        window.location.pathname = '/5-Dana-Bez-Ekrana/';
+      } else if (pathSegments.length > 1) {
+        // Path is /5-Dana-Bez-Ekrana/some-route
+        var redirectPath = '/' + pathSegments.slice(1).join('/');
+        sessionStorage.setItem('redirectTo', redirectPath);
+        window.location.pathname = '/5-Dana-Bez-Ekrana/';
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/5-Dana-Bez-Ekrana/client/App.tsx"></script>
   </body>
 </html>

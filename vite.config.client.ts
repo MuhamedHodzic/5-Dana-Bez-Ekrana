@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  base: "/5-Dana-Bez-Ekrana/", // GitHub Pages base URL
+  base: "/", // GitHub Pages base path (served from gh-pages branch root)
   build: {
     outDir: "dist", // frontend ide direktno u dist
     sourcemap: true, // za debug

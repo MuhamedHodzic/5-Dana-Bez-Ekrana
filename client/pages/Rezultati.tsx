@@ -151,20 +151,15 @@ export default function Rezultati() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            <FileText size={14} /> Dokumenti i najave
+            <FileText size={14} /> Kontakt
           </div>
-          <h2 className="mt-4 text-3xl font-bold text-slate-950">Sve važne informacije na jednom mjestu</h2>
+          <h2 className="mt-4 text-3xl font-bold text-slate-950">Trebate dodatne informacije?</h2>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            Za detaljne PDF dokumente, obrazce i dodatne informacije pogledajte sekciju Dokumenti
-            na početnoj stranici ili nas kontaktirajte direktno.
+            Slobodno nas kontaktirajte putem e-maila, telefona ili društvenih mreža.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link to="/#dokumenti" className="btn-primary inline-flex items-center justify-center gap-2">
-              Dokumenti
-              <ArrowRight size={18} />
-            </Link>
-            <Link to="/kontakt" className="btn-outline inline-flex items-center justify-center gap-2 border-slate-300 text-slate-900 hover:bg-slate-100">
-              Kontakt
+            <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 bg-sky-blue hover:bg-sky-blue/90 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105">
+              Kontaktiraj nas
               <ArrowRight size={18} />
             </Link>
           </div>

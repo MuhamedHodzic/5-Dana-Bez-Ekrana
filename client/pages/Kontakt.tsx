@@ -87,106 +87,115 @@ export default function Kontakt() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {/* Email */}
             <motion.div 
-              className="group bg-white p-6 md:p-8 rounded-xl border border-gray-200 text-center cursor-pointer"
+              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)", borderColor: "rgb(var(--primary))" }}
+              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
               <motion.div 
-                className="w-14 h-14 bg-primary text-white rounded-lg flex items-center justify-center mx-auto mb-4"
+                className="w-12 h-12 bg-sky-blue text-white rounded-lg flex items-center justify-center mx-auto mb-3"
                 whileHover={{ scale: 1.3, rotate: 10 }}
                 transition={{ duration: 0.3 }}
               >
-                <Mail size={28} />
+                <Mail size={24} />
               </motion.div>
-              <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">Email</h3>
+              <h3 className="text-base md:text-lg font-bold text-foreground mb-2">Email</h3>
               <a
                 href="mailto:narodnabibliotekamostar@gmail.com"
-                className="text-primary hover:text-primary/80 transition-colors break-all text-sm md:text-base font-semibold hover:underline"
+                className="text-sky-blue hover:text-sky-blue/80 transition-colors break-all text-xs md:text-sm font-semibold hover:underline"
               >
                 narodnabibliotekamostar@gmail.com
               </a>
             </motion.div>
 
-            {/* Social Media */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <motion.div 
-                className="group bg-white p-6 md:p-8 rounded-xl border border-gray-200 text-center cursor-pointer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1, duration: 0.5 }}
-              >
-                <motion.div 
-                  className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 text-white rounded-lg flex items-center justify-center mx-auto mb-4"
-                  whileHover={{ scale: 1.3, rotate: 10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Instagram size={24} />
-                </motion.div>
-                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
-                  Instagram
-                </h3>
-                <p className="text-muted-foreground mb-5">
-                  Prati nas i podrži projekat na Instagramu.
-                </p>
-                <motion.a
-                  href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full rounded-lg bg-gradient-to-br from-pink-500 to-purple-500 px-4 py-3 text-white font-semibold transition-all duration-300"
-                  title="Instagram"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Otvori Instagram
-                </motion.a>
-              </motion.div>
-
-              <motion.div 
-                className="group bg-white p-6 md:p-8 rounded-xl border border-gray-200 text-center cursor-pointer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.15, duration: 0.5 }}
-              >
-                <motion.div 
-                  className="w-14 h-14 bg-black text-white rounded-lg flex items-center justify-center mx-auto mb-4"
-                  whileHover={{ scale: 1.3, rotate: 10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <TikTokIcon className="w-6 h-6" />
-                </motion.div>
-                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
-                  TikTok
-                </h3>
-                <p className="text-muted-foreground mb-5">
-                  Prati nas i gledaj video sadržaje na TikTok-u.
-                </p>
-                <motion.a
-                  href="https://www.tiktok.com/@5dana_bez_ekrana"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full rounded-lg bg-black px-4 py-3 text-white font-semibold transition-all duration-300"
-                  title="TikTok"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Otvori TikTok
-                </motion.a>
-              </motion.div>
-            </div>
-
-            {/* Location */}
+            {/* Phone */}
             <motion.div 
-              className="group bg-white p-6 md:p-8 rounded-xl border border-gray-200 text-center cursor-pointer"
+              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05, duration: 0.5 }}
+            >
+              <motion.div 
+                className="w-12 h-12 bg-sky-blue text-white rounded-lg flex items-center justify-center mx-auto mb-3"
+                whileHover={{ scale: 1.3, rotate: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Phone size={24} />
+              </motion.div>
+              <h3 className="text-base md:text-lg font-bold text-foreground mb-2">Telefon</h3>
+              <a
+                href="tel:+38762409253"
+                className="text-sky-blue hover:text-sky-blue/80 transition-colors text-xs md:text-sm font-semibold hover:underline"
+              >
+                +387 62 409 253
+              </a>
+            </motion.div>
+
+            {/* Map */}
+            <motion.div 
+              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+            >
+              <motion.button 
+                onClick={() => window.open('https://maps.google.com/?q=Mostar,Bosnia', '_blank')}
+                className="w-12 h-12 bg-sky-blue text-white rounded-lg flex items-center justify-center mx-auto mb-3 hover:bg-sky-blue/90 transition-colors"
+                whileHover={{ scale: 1.3, rotate: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <MapPin size={24} />
+              </motion.button>
+              <h3 className="text-base md:text-lg font-bold text-foreground mb-2">Lokacija</h3>
+              <motion.button
+                onClick={() => window.open('https://maps.google.com/?q=Mostar,Bosnia', '_blank')}
+                className="text-sky-blue hover:text-sky-blue/80 transition-colors text-xs md:text-sm font-semibold hover:underline"
+              >
+                Otvori mapu
+              </motion.button>
+            </motion.div>
+
+            {/* Instagram */}
+            <motion.div 
+              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15, duration: 0.5 }}
+            >
+              <motion.div 
+                className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 text-white rounded-lg flex items-center justify-center mx-auto mb-3"
+                whileHover={{ scale: 1.3, rotate: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Instagram size={24} />
+              </motion.div>
+              <h3 className="text-base md:text-lg font-bold text-foreground mb-2">
+                Instagram
+              </h3>
+              <motion.a
+                href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:text-pink-600 transition-colors text-xs md:text-sm font-semibold hover:underline"
+              >
+                Posjetite
+              </motion.a>
+            </motion.div>
+
+            {/* TikTok */}
+            <motion.div 
+              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
@@ -194,18 +203,23 @@ export default function Kontakt() {
               transition={{ delay: 0.2, duration: 0.5 }}
             >
               <motion.div 
-                className="w-14 h-14 bg-nature-green text-white rounded-lg flex items-center justify-center mx-auto mb-4"
+                className="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mx-auto mb-3"
                 whileHover={{ scale: 1.3, rotate: 10 }}
                 transition={{ duration: 0.3 }}
               >
-                <MapPin size={28} />
+                <TikTokIcon className="w-6 h-6" />
               </motion.div>
-              <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
-                Gdje smo
+              <h3 className="text-base md:text-lg font-bold text-foreground mb-2">
+                TikTok
               </h3>
-              <p className="text-muted-foreground text-sm md:text-base">
-                Mostar, Bosna i Hercegovina
-              </p>
+              <motion.a
+                href="https://www.tiktok.com/@5dana_bez_ekrana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-gray-700 transition-colors text-xs md:text-sm font-semibold hover:underline"
+              >
+                Posjetite
+              </motion.a>
             </motion.div>
           </div>
         </div>

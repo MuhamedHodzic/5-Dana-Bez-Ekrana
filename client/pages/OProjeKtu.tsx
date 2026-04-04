@@ -305,28 +305,20 @@ export default function OProjeKtu() {
           >
             Pogledajte detaljno naš program i rezultate koje postižemo
           </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex justify-center"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
-                to="/program"
+                to="/novosti"
                 className="btn-primary bg-white text-primary hover:bg-gray-100 inline-flex items-center justify-center transition-all duration-300"
               >
-                Pogledaj program
-                <ArrowRight className="ml-2" size={20} />
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                to="/rezultati"
-                className="btn-outline border-white text-white hover:bg-white/10 inline-flex items-center justify-center transition-all duration-300"
-              >
                 Pogledaj rezultate
+                <ArrowRight className="ml-2" size={20} />
               </Link>
             </motion.div>
           </motion.div>

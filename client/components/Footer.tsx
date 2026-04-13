@@ -1,8 +1,6 @@
 import { ArrowUp, Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 
-// TikTok SVG Icon
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -11,6 +9,17 @@ const TikTokIcon = ({ className }: { className?: string }) => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.1 1.82 2.9 2.9 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-.95-.1z"/>
+  </svg>
+);
+
+const FacebookIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.009 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.017 1.792-4.684 4.533-4.684 1.313 0 2.686.236 2.686.236v2.962H15.83c-1.49 0-1.955.931-1.955 1.887v2.262h3.328l-.532 3.49h-2.796V24C19.612 23.082 24 18.092 24 12.073Z" />
   </svg>
 );
 
@@ -42,7 +51,7 @@ export default function Footer() {
                 <div className="flex items-center justify-center w-5 h-5">
                   <Phone size={16} />
                 </div>
-                <span>+387 62 409 253</span>
+                <span>+387 62 490 253</span>
               </p>
               <a href="mailto:narodnabibliotekamostar@gmail.com" className="flex items-center gap-3 transition-colors hover:text-white">
                 <div className="flex items-center justify-center w-5 h-5">
@@ -60,7 +69,7 @@ export default function Footer() {
               <div className="mt-5 flex items-center gap-3">
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 transition-all hover:bg-white hover:text-slate-950" aria-label="Instagram">
+                    <a href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 via-rose-500 to-purple-500 text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-pink-500/20" aria-label="Instagram">
                       <Instagram size={18} />
                     </a>
                   </TooltipTrigger>
@@ -69,7 +78,7 @@ export default function Footer() {
                 
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a href="https://www.tiktok.com/@5dana_bez_ekrana" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 transition-all hover:bg-white hover:text-slate-950" aria-label="TikTok">
+                    <a href="https://www.tiktok.com/@5dana_bez_ekrana" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-black text-white transition-all hover:scale-105 hover:bg-slate-900 hover:shadow-lg hover:shadow-slate-950/30" aria-label="TikTok">
                       <TikTokIcon className="w-[18px] h-[18px]" />
                     </a>
                   </TooltipTrigger>
@@ -78,7 +87,16 @@ export default function Footer() {
 
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a href="mailto:narodnabibliotekamostar@gmail.com" className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 transition-all hover:bg-white hover:text-slate-950" aria-label="Email">
+                    <a href="https://www.facebook.com/p/5-dana-bez-ekrana-61556377697361/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1877F2] text-white transition-all hover:scale-105 hover:bg-[#1668d4]" aria-label="Facebook">
+                      <FacebookIcon className="w-[18px] h-[18px]" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>Facebook</TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a href="mailto:narodnabibliotekamostar@gmail.com" className="flex items-center justify-center w-10 h-10 rounded-full bg-sky-blue text-white transition-all hover:scale-105 hover:bg-sky-blue/90 hover:shadow-lg hover:shadow-sky-blue/20" aria-label="Email">
                       <Mail size={18} />
                     </a>
                   </TooltipTrigger>

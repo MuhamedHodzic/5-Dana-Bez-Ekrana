@@ -1,6 +1,6 @@
-import { useState, useEffect, Suspense, lazy } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Mail, MapPin, Instagram, BookOpen, Users, Zap, Link as LinkIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, BookOpen, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -193,7 +193,7 @@ export default function Index() {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.7 }}
             >
-              "5 Dana Bez Ekrana" je edukativni projekat koji učenicima pruža jedinstvenu priliku da provedu pet dana u prirodi,
+              "5 Dana Bez Ekrana" je edukativni projekat koji učesnicima pruža jedinstvenu priliku da provedu pet dana u prirodi,
               daleko od digitalnih uređaja, fokusirajući se na zajedništvo, kreativnost i unutrašnji mir.
             </motion.p>
           </motion.div>
@@ -281,7 +281,7 @@ export default function Index() {
               "Timski rad i zajedničke igre",
               "Aktivnosti u prirodi",
               "Razgovori i refleksija",
-              "Izveštaji i zaključci"
+              "Zajednička putovanja"
             ].map((activity, i) => (
               <motion.div
                 key={i}
@@ -314,7 +314,7 @@ export default function Index() {
               className="inline-flex items-center gap-3 bg-gradient-to-r from-sky-blue to-primary hover:from-sky-blue/90 hover:to-primary text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 transform hover:rotate-1 hover:shadow-primary/25 relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10">Pogledaj Detaljniji Program</span>
+              <span className="relative z-10">Pogledaj detaljniji program</span>
               <ChevronRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </motion.div>

@@ -29,12 +29,12 @@ export default function OProjeKtu() {
     {
       icon: <Heart size={28} />,
       title: "Ljepota života bez digitalnih distrakcija",
-      desc: "Otkrijte ljepotu jednostavnijih stvari i autentična iskustva",
+      desc: "Otkrijte ljepotu jednostavnijih stvari i autentičnih iskustava",
     },
     {
       icon: <Users size={28} />,
       title: "Zajedništvo i međusobna podrška",
-      desc: "Izgradite duboke veze sa ljudima koji dijele vaše vrednosti",
+      desc: "Izgradite duboke veze sa ljudima koji dijele vaše vrijednosti",
     },
     {
       icon: <Heart size={28} />,
@@ -74,7 +74,7 @@ export default function OProjeKtu() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            Saznajte više o misiji i vizi koja nas vodi
+            Saznajte više o misiji i viziji koja nas vodi
           </motion.p>
         </div>
       </motion.section>
@@ -106,7 +106,7 @@ export default function OProjeKtu() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p>
-                <strong>Mladi danas provode previše vremena uz ekrane</strong> što
+                <strong>Mladi provode previše vremena uz ekrane</strong> što
                 utiče na njihovu pažnju, mentalno zdravlje, fizičku aktivnost i
                 komunikaciju. Konstantna povezanost sa digitalnim svijetom dovodi
                 do gubitka kontakta sa realnim svijetom i sa samima sobom.
@@ -142,10 +142,10 @@ export default function OProjeKtu() {
               </motion.div>
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-3">
-                  Naša misija
+                  Naša vizija
                 </h3>
                 <p className="text-muted-foreground">
-                  Promovati digitalni detoks i mentalno zdravlje mladih kroz
+                  Promovisati digitalni detoks i mentalno zdravlje mladih kroz
                   inovativne programe koji povezuju prirodu, kreativnost i
                   zajedništvo.
                 </p>
@@ -238,8 +238,8 @@ export default function OProjeKtu() {
               {
                 icon: <Users size={24} />,
                 color: "bg-nature-green",
-                title: "Bolje komunikacijske veštine",
-                desc: "Direktan kontakt jača sposobnost slušanja, empatije i stvarnog razumevanja."
+                title: "Bolje komunikacijske vještine",
+                desc: "Direktan kontakt jača sposobnost slušanja, empatije i stvarnog razumijevanja."
               },
               {
                 icon: <Smile size={24} />,

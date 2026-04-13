@@ -8,7 +8,7 @@ export default function TopBar() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/80">
             <span className="inline-flex items-center gap-2">
               <Phone size={14} />
-              <span>+387 62 409 253</span>
+              <span>+387 62 490 253</span>
             </span>
             <a
               href="mailto:narodnabibliotekamostar@gmail.com"

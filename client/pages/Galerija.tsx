@@ -102,7 +102,7 @@ export default function Galerija() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            Vizuelna putovanja kroz naše kampanje
+            Vizuelna putovanja kroz naše kampove
           </motion.p>
         </div>
       </motion.section>
@@ -116,7 +116,7 @@ export default function Galerija() {
               Fotografije
             </h2>
             <p className="text-muted-foreground text-base md:text-lg">
-              Kroz ove fotografije vidite lepotu kampanja, autentične trenutke zajedništva i rast
+              Kroz ove fotografije vidite ljepotu kampova, autentične trenutke zajedništva i rast
             </p>
           </div>
 

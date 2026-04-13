@@ -58,9 +58,9 @@ export default function Program() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
           <p className="text-sm uppercase tracking-[0.25em] text-white/70">Aktivnosti</p>
-          <h1 className="mt-4 text-4xl md:text-5xl font-bold">Školske i projektne aktivnosti</h1>
+          <h1 className="mt-4 text-4xl md:text-5xl font-bold">Projektne aktivnosti</h1>
           <p className="mt-4 max-w-3xl text-base md:text-lg leading-8 text-white/90">
-            Aktivnosti su osmišljene tako da učenicima ponude kvalitetan sadržaj, podstaknu
+            Aktivnosti su osmišljene tako da učesnicima ponude kvalitetan sadržaj, podstaknu
             saradnju i povežu formalno obrazovanje sa praktičnim iskustvom.
           </p>
         </div>

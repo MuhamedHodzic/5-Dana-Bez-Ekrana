@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send, Instagram, Heart } from "lucide-react";
+import { Mail, MapPin, Phone, Instagram } from "lucide-react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 
-// TikTok SVG Icon
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -17,35 +15,21 @@ const TikTokIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const FacebookIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.009 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.017 1.792-4.684 4.533-4.684 1.313 0 2.686.236 2.686.236v2.962H15.83c-1.49 0-1.955.931-1.955 1.887v2.262h3.328l-.532 3.49h-2.796V24C19.612 23.082 24 18.092 24 12.073Z" />
+  </svg>
+);
+
 export default function Kontakt() {
   useScrollToTop();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
 
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // In a real app, you would send this data to a server
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setSubmitted(false), 5000);
-  };
+  const openMap = "https://maps.google.com/?q=Mostar,Bosnia";
 
   return (
     <div className="min-h-screen bg-white">
@@ -73,12 +57,11 @@ export default function Kontakt() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            Rado ćemo čuti od vas
+            Pronađite nas putem društvenih mreža, emaila, telefona i lokacije
           </motion.p>
         </div>
       </motion.section>
 
-      {/* Contact Info Cards */}
       <motion.section 
         className="py-12 md:py-20 bg-gradient-to-br from-primary/5 to-sky-blue/5"
         initial={{ opacity: 0 }}
@@ -87,13 +70,22 @@ export default function Kontakt() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {/* Email */}
-            <motion.div 
-              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
+          <div className="mb-10 text-center">
+            <h2 className="section-title mb-4">Kontakt informacije</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Za sva pitanja i prijave najbrže nas možete pronaći na kanalima ispod.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-6">
+            <motion.a 
+              href="mailto:narodnabibliotekamostar@gmail.com"
+              aria-label="Pošalji email"
+              className="group bg-white p-4 md:p-6 rounded-xl border border-sky-blue/20 text-center cursor-pointer flex flex-col items-center justify-center min-h-[220px] shadow-sm"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+              whileTap={{ scale: 0.98 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
@@ -105,71 +97,71 @@ export default function Kontakt() {
                 <Mail size={24} />
               </motion.div>
               <h3 className="text-base md:text-lg font-bold text-foreground mb-2">Email</h3>
-              <a
-                href="mailto:narodnabibliotekamostar@gmail.com"
-                className="text-sky-blue hover:text-sky-blue/80 transition-colors break-all text-xs md:text-sm font-semibold hover:underline"
-              >
+              <span className="text-sky-blue hover:text-sky-blue/80 transition-colors break-all text-xs md:text-sm font-semibold group-hover:underline">
                 narodnabibliotekamostar@gmail.com
-              </a>
-            </motion.div>
+              </span>
+            </motion.a>
 
-            {/* Phone */}
-            <motion.div 
-              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
+            <motion.a 
+              href="tel:+38762490253"
+              aria-label="Pozovi broj telefona"
+              className="group bg-white p-4 md:p-6 rounded-xl border border-emerald-200 text-center cursor-pointer flex flex-col items-center justify-center min-h-[220px] shadow-sm"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+              whileTap={{ scale: 0.98 }}
               viewport={{ once: true }}
               transition={{ delay: 0.05, duration: 0.5 }}
             >
               <motion.div 
-                className="w-12 h-12 bg-sky-blue text-white rounded-lg flex items-center justify-center mx-auto mb-3"
+                className="w-12 h-12 bg-emerald-500 text-white rounded-lg flex items-center justify-center mx-auto mb-3"
                 whileHover={{ scale: 1.3, rotate: 10 }}
                 transition={{ duration: 0.3 }}
               >
                 <Phone size={24} />
               </motion.div>
               <h3 className="text-base md:text-lg font-bold text-foreground mb-2">Telefon</h3>
-              <a
-                href="tel:+38762409253"
-                className="text-sky-blue hover:text-sky-blue/80 transition-colors text-xs md:text-sm font-semibold hover:underline"
-              >
-                +387 62 409 253
-              </a>
-            </motion.div>
+              <span className="text-emerald-600 hover:text-emerald-700 transition-colors text-xs md:text-sm font-semibold group-hover:underline">
+                +387 62 490 253
+              </span>
+            </motion.a>
 
-            {/* Map */}
-            <motion.div 
-              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
+            <motion.a 
+              href={openMap}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otvori lokaciju na mapi"
+              className="group bg-white p-4 md:p-6 rounded-xl border border-rose-200 text-center cursor-pointer flex flex-col items-center justify-center min-h-[220px] shadow-sm"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+              whileTap={{ scale: 0.98 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.5 }}
             >
-              <motion.button 
-                onClick={() => window.open('https://maps.google.com/?q=Mostar,Bosnia', '_blank')}
-                className="w-12 h-12 bg-sky-blue text-white rounded-lg flex items-center justify-center mx-auto mb-3 hover:bg-sky-blue/90 transition-colors"
+              <motion.div 
+                className="w-12 h-12 bg-rose-500 text-white rounded-lg flex items-center justify-center mx-auto mb-3 hover:bg-rose-600 transition-colors"
                 whileHover={{ scale: 1.3, rotate: 10 }}
                 transition={{ duration: 0.3 }}
               >
                 <MapPin size={24} />
-              </motion.button>
+              </motion.div>
               <h3 className="text-base md:text-lg font-bold text-foreground mb-2">Lokacija</h3>
-              <motion.button
-                onClick={() => window.open('https://maps.google.com/?q=Mostar,Bosnia', '_blank')}
-                className="text-sky-blue hover:text-sky-blue/80 transition-colors text-xs md:text-sm font-semibold hover:underline"
-              >
+              <span className="text-rose-600 hover:text-rose-700 transition-colors text-xs md:text-sm font-semibold group-hover:underline">
                 Otvori mapu
-              </motion.button>
-            </motion.div>
+              </span>
+            </motion.a>
 
-            {/* Instagram */}
-            <motion.div 
-              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
+            <motion.a 
+              href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otvori Instagram profil"
+              className="group bg-white p-4 md:p-6 rounded-xl border border-pink-200 text-center cursor-pointer flex flex-col items-center justify-center min-h-[220px] shadow-sm"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+              whileTap={{ scale: 0.98 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15, duration: 0.5 }}
             >
@@ -183,22 +175,21 @@ export default function Kontakt() {
               <h3 className="text-base md:text-lg font-bold text-foreground mb-2">
                 Instagram
               </h3>
-              <motion.a
-                href="https://www.instagram.com/5dana_bez_ekrana?igsh=aWtwbGF3d285dmEw"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-pink-500 hover:text-pink-600 transition-colors text-xs md:text-sm font-semibold hover:underline"
-              >
+              <span className="text-pink-500 hover:text-pink-600 transition-colors text-xs md:text-sm font-semibold group-hover:underline">
                 Posjetite
-              </motion.a>
-            </motion.div>
+              </span>
+            </motion.a>
 
-            {/* TikTok */}
-            <motion.div 
-              className="group bg-white p-4 md:p-6 rounded-xl border border-gray-200 text-center cursor-pointer flex flex-col items-center justify-center h-auto min-h-[220px]"
+            <motion.a 
+              href="https://www.tiktok.com/@5dana_bez_ekrana"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otvori TikTok profil"
+              className="group bg-white p-4 md:p-6 rounded-xl border border-slate-300 text-center cursor-pointer flex flex-col items-center justify-center min-h-[220px] shadow-sm"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+              whileTap={{ scale: 0.98 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
@@ -212,141 +203,42 @@ export default function Kontakt() {
               <h3 className="text-base md:text-lg font-bold text-foreground mb-2">
                 TikTok
               </h3>
-              <motion.a
-                href="https://www.tiktok.com/@5dana_bez_ekrana"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-gray-700 transition-colors text-xs md:text-sm font-semibold hover:underline"
-              >
+              <span className="text-black hover:text-gray-700 transition-colors text-xs md:text-sm font-semibold group-hover:underline">
                 Posjetite
-              </motion.a>
-            </motion.div>
+              </span>
+            </motion.a>
+
+            <motion.a 
+              href="https://www.facebook.com/p/5-dana-bez-ekrana-61556377697361/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otvori Facebook stranicu"
+              className="group bg-white p-4 md:p-6 rounded-xl border border-[#1877F2]/20 text-center cursor-pointer flex flex-col items-center justify-center min-h-[220px] shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.1)" }}
+              whileTap={{ scale: 0.98 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25, duration: 0.5 }}
+            >
+              <motion.div 
+                className="w-12 h-12 bg-[#1877F2] text-white rounded-lg flex items-center justify-center mx-auto mb-3"
+                whileHover={{ scale: 1.3, rotate: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <FacebookIcon className="w-6 h-6" />
+              </motion.div>
+              <h3 className="text-base md:text-lg font-bold text-foreground mb-2">
+                Facebook
+              </h3>
+              <span className="text-[#1877F2] hover:text-[#1668d4] transition-colors text-xs md:text-sm font-semibold group-hover:underline">
+                Posjetite
+              </span>
+            </motion.a>
           </div>
         </div>
       </motion.section>
 
-      {/* Contact Form Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="section-title text-center mb-4">Pošalji nam poruku</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Popunite formu ispod i odgovorićemo u roku od 48 sati
-          </p>
-
-          <div className="bg-gradient-to-br from-primary/5 to-sky-blue/5 p-8 md:p-12 rounded-xl border border-primary/20">
-            {submitted && (
-              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-                <p className="font-semibold">✓ Hvala na vašoj poruci!</p>
-                <p className="text-sm">
-                  Odgovorićemo vam što je brže moguće na vašu email adresu.
-                </p>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-semibold text-foreground mb-2"
-                >
-                  Ime i prezime *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  placeholder="Vaše ime i prezime"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-semibold text-foreground mb-2"
-                >
-                  Email adresa *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  placeholder="vasa@email.com"
-                />
-              </div>
-
-              {/* Subject */}
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-semibold text-foreground mb-2"
-                >
-                  Predmet *
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-white"
-                >
-                  <option value="">Odaberite predmet</option>
-                  <option value="prijava">Želim se prijaviti za kamp</option>
-                  <option value="info">Trebam vise informacija</option>
-                  <option value="partneri">Zainteresovan/a sam za partnerstvo</option>
-                  <option value="fotografije">Želim poslati fotografije</option>
-                  <option value="drugo">Drugo</option>
-                </select>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-semibold text-foreground mb-2"
-                >
-                  Poruka *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                  placeholder="Napišite vašu poruku..."
-                />
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full btn-primary bg-primary text-primary-foreground hover:bg-primary/90 flex items-center justify-center gap-2"
-              >
-                <Send size={20} />
-                Pošalji poruku
-              </button>
-            </form>
-
-            <p className="text-center text-muted-foreground text-sm mt-6">
-              * Polja su obavezna
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
       <section className="py-12 md:py-20 bg-gradient-to-br from-warm-beige/20 to-warm-beige/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title text-center mb-8 md:mb-12">
@@ -361,7 +253,7 @@ export default function Kontakt() {
               },
               {
                 q: "Koja je minimalna i maksimalna starost za učešće?",
-                a: "Kamp je namenjena učenicima od 10 do 19 godina. Posebne grupe mogu biti organizovane za druge uzraste.",
+                a: "Kamp je namijenjen učenicima od 10 do 19 godina. Posebne grupe mogu biti organizovane za druge uzraste.",
               },
               {
                 q: "Šta ako nemam iskustva?",
@@ -370,10 +262,6 @@ export default function Kontakt() {
               {
                 q: "Da li mogu doći bez prijatelja?",
                 a: "Apsolutno! Veliki broj učesnika dolaze sami i brže se druže sa drugima.",
-              },
-              {
-                q: "Šta ako budem bolestan/a tokom kampanja?",
-                a: "Imamo medicinskog osoblja na licu mjesta i sve potrebne mjere sigurnosti.",
               },
               {
                 q: "Kako mogu biti vršnjački edukator?",
@@ -392,7 +280,6 @@ export default function Kontakt() {
         </div>
       </section>
 
-      {/* Response Time Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-primary/10 to-sky-blue/10 p-8 rounded-xl border border-primary/20">
@@ -416,7 +303,6 @@ export default function Kontakt() {
         </div>
       </section>
 
-      {/* Google Maps Section */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -427,7 +313,7 @@ export default function Kontakt() {
           >
             <h2 className="section-title text-center">Naša lokacija</h2>
             <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-            Narodne Biblioteke Mostar
+              Narodna biblioteka Mostar
             </p>
           </motion.div>
 

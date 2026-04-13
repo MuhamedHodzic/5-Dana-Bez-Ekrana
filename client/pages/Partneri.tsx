@@ -10,30 +10,22 @@ export default function Partneri() {
   const partners = [
     {
       name: "Narodna biblioteka Mostar",
-      role: "Osnivač",
       icon: <Building2 size={40} />,
-      desc: "Ključni partner koji je osnovao i vodi projekt. Imaju bogatu historiju edukativnog rada sa mladima.",
       color: "primary",
     },
     {
       name: "Nastavnički fakultet Mostar",
-      role: "Edukativni partner",
       icon: <Users size={40} />,
-      desc: "Pruža stručnjake resurse, obuku za edukatore i akademsku podršku programu.",
       color: "sky-blue",
     },
     {
       name: "Yunus Emre institut",
-      role: "Kulturni partner",
       icon: <Heart size={40} />,
-      desc: "Podržava kreativne komponente programa i pomaže u promoviranju kulturnog sadržaja.",
       color: "nature-green",
     },
     {
       name: "Centar za izgradnju mira Sanski Most",
-      role: "Partner za društveni mir",
       icon: <Handshake size={40} />,
-      desc: "Omogućava nam da organizujemo kampove i pruža duhovnu podršku zajedničkim vrijednostima.",
       color: "primary",
     },
   ];
@@ -170,10 +162,6 @@ export default function Partneri() {
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     {partner.name}
                   </h3>
-                  <p className={`font-semibold ${colorScheme.text} mb-4`}>
-                    {partner.role}
-                  </p>
-                  <p className="text-muted-foreground">{partner.desc}</p>
                 </motion.div>
               );
             })}
@@ -184,7 +172,7 @@ export default function Partneri() {
       {/* How We Collaborate */}
       <section className="py-20 bg-gradient-to-br from-warm-beige/20 to-warm-beige/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="section-title text-center mb-12">Kako saradujemo?</h2>
+          <h2 className="section-title text-center mb-12">Kako sarađujemo?</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl border border-gray-200 text-center">
@@ -214,7 +202,7 @@ export default function Partneri() {
                 Evaluacija
               </h3>
               <p className="text-muted-foreground">
-                Zajedno mjerimo rezultate i planiramo unapređenja za sledeće
+                Zajedno mjerimo rezultate i planiramo unapređenja za sljedeće
                 godine
               </p>
             </div>
@@ -250,7 +238,7 @@ export default function Partneri() {
                   Vidljivost i prepoznatljivost
                 </h3>
                 <p className="text-muted-foreground">
-                  Biti asociran sa nacionalnim projektom koji dobija sve veću
+                  Biti asociran sa inovativnim projektom koji dobija sve veću
                   pažnju
                 </p>
               </div>
@@ -275,7 +263,7 @@ export default function Partneri() {
                   Sinergija i saradnja
                 </h3>
                 <p className="text-muted-foreground">
-                  Mogućnost saradnje sa drugim instituciajama i proširenja mreže
+                  Mogućnost saradnje sa drugim institucijama i proširenja mreže
                 </p>
               </div>
             </div>
@@ -290,7 +278,7 @@ export default function Partneri() {
             Zainteresovani za saradnju?
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Kontaktirajte nas da diskutujemo kako vaša organizacija može biti
+            Kontaktirajte nas da razgovaramo kako vaša organizacija može biti
             dio našeg projekta
           </p>
           <Link
